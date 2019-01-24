@@ -1,0 +1,9 @@
+
+
+function FindProxyForURL(url, host) {
+	if (check_domain(host))
+		alert("In list: "+host+" "+url);
+	else
+		alert("Not in list: "+host+" "+url);
+	return "DIRECT;"
+}
