@@ -19,8 +19,8 @@ domains = split_by_tld(domains_validator(domains))
 var alph = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 var all_arrays = []
 for (key in domains)
-	all_arrays.push(domains[key]);
-var words = find_words(all_arrays.join(" "), alph.length)
+	all_arrays.push(domains[key].join(" "));
+var words = find_words(pack_list(all_arrays.join(" ").split(" ")).join(" "), alph.length)
 var replacer = make_replacer(words)
 var replace_dict = make_replace_dict(words, alph)
 
@@ -35,7 +35,7 @@ for (key in domains)
 	if (split)
 		WScript.StdOut.Write(",");
 
-	var list = pack_list(replace_words(domains[key].join(" "), replacer, replace_dict).split(" ").sort());
+	var list = pack_list(replace_words(domains[key].join(" "), replacer, replace_dict).split(" "));
 
 	WScript.Echo(get_key(replace_words(key, replacer, replace_dict)) + ':"' + list.join(" ") + '"');
 

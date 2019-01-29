@@ -1,6 +1,7 @@
 
 function pack_list(list)
 {
+	list = list.sort()
 	for (var i = list.length - 1; i > 0; i--)
 	{
 		var si = 0
