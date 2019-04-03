@@ -11,7 +11,7 @@ var replacer = new RegExp("[" + keys.join("").replace(/([[\]])/g, "\\$1") + "]",
 
 WScript.StdOut.Write('["')
 WScript.StdOut.Write(
-	[d_ad.join(" "), d_eh.join(" "), d_il.join(" "), d_mp.join(" "), d_qt.join(" "), d_uz.join(" ")]
+	[d_ad.join(" "), d_eh.join(" "), d_il.join(" "), d_mp.join(" "), d_qt.join(" "), d_uz.join(" "), d_other.join(" ")]
 	.join(" ")
 	.replace(replacer, function(key){
 		return "."+invert[key];
